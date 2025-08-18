@@ -1,12 +1,68 @@
-# React + Vite
+# Guia de Contribuição - Whitelabel 
+## 📥 Clonar o repositório
+Antes de tudo, clone o projeto para sua máquina:  
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Acesse a pasta:
+cd nome-do-repositorio
 
-Currently, two official plugins are available:
+## 🌿 Criar uma nova branch
+Sempre crie sua branch a partir da main.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **O padrão de nome será:**  
+**feature/f-XX** → para novas funcionalidades  
+**fix/f-XX** → para correções  
+**hotfix/f-XX** → para correções urgentes em produção  
 
-## Expanding the ESLint configuration
+Onde f é de frontend e XX é o número da task no kanban.Exemplo: Task #5 → feature/f-05
+Passos:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### **Atualize sua main:**  
+git checkout main  
+git pull origin main
+
+
+Crie sua branch:
+
+git checkout -b feature/f-05
+
+## 💻 Trabalhar na sua branch
+Faça as alterações necessárias e adicione os arquivos:  
+
+git add .
+
+Faça commits descritivos:  
+
+git commit -m "feat: adiciona componente de login (task #5)"
+
+## ⬆️ Enviar branch para o repositório remoto
+git push origin feature/f-05
+
+## 🔀 Criar Pull Request (PR)
+
+Acesse o repositório no GitHub.  
+Clique em Compare & Pull Request.  
+Descreva as alterações feitas.  
+Relacione a task correspondente.  
+
+## 🔄 Atualizar sua branch com a main
+Se alguém fez alterações na main enquanto você trabalhava:  
+git checkout main  
+git pull origin main  
+git checkout feature/f-05  
+git merge main  
+
+Resolva conflitos se houver, depois:
+git add .  
+git commit -m "merge main into feature/f-05"  
+
+## ✅ Fluxo Resumido
+git clone ...  
+git checkout main  
+git pull origin main  
+git checkout -b feature/f-XX  
+# Alterar código
+git add .  
+git commit -m "mensagem"  
+git push origin feature/f-XX  
+# Criar Pull Request
