@@ -12,9 +12,12 @@ export default function LoginScreen() {
 
             <form className="col-span-3 flex items-center justify-center h-full">
                 <div>
-                    <EmailInput label={"Email"} placeholder={"Digite seu email"} />
-                    <PasswordInput label={"Senha"} placeholder={"Digite sua senha"} />
-                    <button>Entrar</button>
+                    <h1 className="text-primary">Acesse ou crie uma conta</h1>
+                    <div className="border w-4xl">
+                        <EmailInput label={"Email"} placeholder={"Digite seu email"} />
+                        <PasswordInput label={"Senha"} placeholder={"Digite sua senha"} />
+                        <button>Entrar</button>
+                    </div>
                 </div>
             </form>
         </div>
