@@ -1,9 +1,9 @@
-import LoginScreen from "./pages/LoginScreen";
+import Home from "./pages/Home";
 
 export default function App() {
-    return(
-        
-        <LoginScreen />
-        
+    return (
+
+        <Home />
+
     )
 }
