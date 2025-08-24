@@ -10,7 +10,7 @@ export default function EmailInput({
     inputClassName,
     errorClassName,
 }) {
-    const hasError = !!errors;
+    const hasError = !!errors[name];
 
     const errorClasses = 'border-2 border-red-400';
 
@@ -27,11 +27,11 @@ export default function EmailInput({
                 name={name}
                 placeholder={placeholder}
                 disabled={disabled}
-                {...register}
+                {...register( name )}
             />
 
             {hasError && (
-                <p className={errorClassName}>{errors.message}</p>
+                <p className={errorClassName}>{errors[name]?.message}</p>
             )}
         </div>
     );

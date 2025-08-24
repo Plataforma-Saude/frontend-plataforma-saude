@@ -14,53 +14,61 @@ const ClosedEye = () => (
     </svg>
 );
 
+
 export default function PasswordInput({
     label,
     name,
-    value,
-    onChange,
-    errors,
     placeholder,
+    register,
+    disabled,
+    errors,
     containerClassName,
     labelClassName,
-    inputWrapperClassName,
     inputClassName,
     errorClassName,
 }) {
-    const [isVisible, setIsVisible] = useState(false);
-    const hasError = !!errors;
-    const errorWrapperClasses = 'border-2 border-red-500';
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+    const hasError = !!errors[name];
+
+    const errorClasses = 'border-2 border-red-400';
+
+    const togglePasswordVisibility = () => {
+        setIsPasswordVisible(prevState => !prevState);
+    };
 
     return (
         <div className={containerClassName}>
-            <label
-                className={`flex items-center ${labelClassName}`}
-                htmlFor={name}
-            >
+            <label className={labelClassName} htmlFor={name}>
                 {label}
             </label>
-            <div className={`relative ${inputWrapperClassName} ${hasError ? errorWrapperClasses : ''}`}>
+            
+            {/* Wrapper necessário para posicionar o ícone dentro do input */}
+            <div className="relative w-full">
                 <input
+                    className={`${inputClassName} ${hasError ? errorClasses : ''}`}
+                    // O tipo do input muda de acordo com o estado
+                    type={isPasswordVisible ? 'text' : 'password'}
                     id={name}
-                    type={isVisible ? 'text' : 'password'}
-                    className={inputClassName}
-                    placeholder={placeholder}
-                    autoComplete="off"
                     name={name}
-                    value={value}
-                    onChange={onChange}
+                    placeholder={placeholder}
+                    disabled={disabled}
+                    // O autocomplete ajuda os gerenciadores de senha
+                    autoComplete="current-password" 
+                    {...register(name)}
                 />
+                
                 <button
                     type="button"
-                    onClick={() => setIsVisible(v => !v)}
-                    className="absolute inset-y-0 right-0 flex items-center pr-3"
-                    aria-label={isVisible ? "Esconder senha" : "Mostrar senha"}
+                    onClick={togglePasswordVisibility}
+                    className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500"
+                    aria-label={isPasswordVisible ? "Esconder senha" : "Mostrar senha"}
                 >
-                    {isVisible ? <OpenEye /> : <ClosedEye />}
+                    {isPasswordVisible ? <OpenEye /> : <ClosedEye />}
                 </button>
             </div>
+
             {hasError && (
-                <p className={errorClassName}>{errors.message}</p>
+                <p className={errorClassName}>{errors[name]?.message}</p>
             )}
         </div>
     );
