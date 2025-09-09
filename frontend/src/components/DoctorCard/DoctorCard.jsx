@@ -33,7 +33,7 @@ function DoctorCard({ doctor }) {
       favorites = favorites.filter((fav) => fav.id !== doctor.id);
       setIsFavorite(false);
     } else {
-      // Adiciona aos favoritos
+      // Adiciona aos favoritos.
       favorites.push(doctor);
       setIsFavorite(true);
     }
