@@ -1,5 +1,4 @@
 import Person2Icon from "@mui/icons-material/Person2";
-import styles from "./DoctorCard.module.css";
 import { FaStar } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
@@ -42,30 +41,37 @@ function DoctorCard({ doctor }) {
   };
 
   return (
-    <div className={styles.card}>
-      <div className={styles.header}>
-        <span className={styles.star}>
+    <div className="w-full max-w-[300px] rounded-xl overflow-hidden shadow-md bg-white text-center m-4">
+      {/* Header */}
+      <div className="bg-[#3b7868] h-[65px] relative">
+        <span className="absolute right-2 top-2 text-xl">
           <button
             onClick={toggleFavorite}
-            style={{ background: "none", border: "none", cursor: "pointer" }}
+            className="bg-none border-none cursor-pointer"
           >
             <FaStar color={isFavorite ? "gold" : "gray"} />
           </button>
         </span>
       </div>
 
-      <div className={styles.avatar}>
+      {/* Avatar */}
+      <div className="flex justify-center -mt-8 relative">
         {doctor.photo ? (
-          <img src={doctor.photo} alt={doctor.name} />
+          <img
+            src={doctor.photo}
+            alt={doctor.name}
+            className="w-[100px] h-[100px] rounded-full border-[3px] border-white object-cover"
+          />
         ) : (
           <Person2Icon style={{ fontSize: 90 }} />
         )}
       </div>
 
-      <div className={styles.info}>
-        <h2>{doctor.name}</h2>
-        <p className={styles.specialty}>{doctor.specialty}</p>
-        <p className={styles.crm}>CRM: {doctor.crm}</p>
+      {/* Info */}
+      <div className="p-5">
+        <h2 className="text-lg font-bold my-2">{doctor.name}</h2>
+        <p className="text-[#555] mb-2">{doctor.specialty}</p>
+        <p className="text-sm text-gray-500">CRM: {doctor.crm}</p>
       </div>
     </div>
   );
