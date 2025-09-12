@@ -38,10 +38,7 @@ export default function App() {
 
   return (
     <>
-      {doctors.map((doctor) => (
-        <DoctorCard key={doctor.id} doctor={doctor} />
-      ))}
-      {/* // <LoginScreen /> */}
+      <LoginScreen />
     </>
   );
 }
