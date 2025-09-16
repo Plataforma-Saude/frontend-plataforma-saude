@@ -1,7 +1,7 @@
-import Header from "../components/Header/Header";
+import DoctorsFilter from "../components/DoctorsFilter/DoctorsFilter";
 
 export default function SelectDoctor() {
     return(
-        <Header />
+        <DoctorsFilter />
     )
 }
