@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import LoginScreen from "./pages/LoginScreen";
 import SelectDoctor from "./pages/SelectDoctor";
 import Layout from "./components/Layout/Layout";
+import ScheduleAppointment from './pages/ScheduleAppointment';
 
 export default function App() {
     return (
@@ -16,6 +17,7 @@ export default function App() {
                     <Route path="/buscar-medico" element={<SelectDoctor />} />
                     {/* Exemplo: Se tivesse outra página, ela viria aqui */}
                     {/* <Route path="/meu-perfil" element={<ProfileScreen />} /> */}
+                    <Route path="/agendar/:doctorId" element={<ScheduleAppointment />} />
                 </Route>
 
                 {/* Redirecionamento padrão para qualquer rota não encontrada */}
