@@ -6,7 +6,8 @@ import ImageComponent from "../components/ImageComponent/ImageComponent";
 import Logo from "../assets/icons/logo.svg"
 import HomeDoctors from "../assets/img/home-doctors.svg"
 import { loginValidationSchema } from "../utils/loginValidation";
-
+import { Link } from "react-router-dom";
+ 
 export default function LoginScreen() {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(loginValidationSchema)
@@ -62,7 +63,12 @@ export default function LoginScreen() {
                     <div className="flex justify-around items-center">
                         <button
                             className="border border-primary w-50 bg-primary text-white text-lg font-semibold h-10 rounded-lg cursor-pointer hover:bg-[#4f9e8a] transition-all">Entrar</button>
-                        <a href="" className="border border-primary text-lg px-4 rounded-lg">Criar conta</a>
+                        
+                        <Link
+                            to="/register"
+                            className="border border-primary text-lg px-4 rounded-lg">
+                            Criar conta
+                        </Link>
                     </div>
                     <div className="flex justify-center items-center">
                         <a href="" className="text-lg px-4">Esqueci minha senha</a>
