@@ -1,7 +1,7 @@
 # Guia de Contribuição - Whitelabel 
 ## 📥 Clonar o repositório
 Antes de tudo, clone o projeto para sua máquina:  
-git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/Plataforma-Saude/frontend-plataforma-saude.git)
+git clone https://github.com/Plataforma-Saude/frontend-plataforma-saude.git
 
 Acesse a pasta:
 cd nome-do-repositorio
