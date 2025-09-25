@@ -3,6 +3,7 @@ import LoginScreen from "./pages/LoginScreen";
 import SelectDoctor from "./pages/SelectDoctor";
 import Layout from "./components/Layout/Layout";
 import ScheduleAppointment from './pages/ScheduleAppointment';
+import RegisterScreen from './pages/RegisterScreen';
 
 export default function App() {
     return (
@@ -19,6 +20,8 @@ export default function App() {
                     {/* <Route path="/meu-perfil" element={<ProfileScreen />} /> */}
                     <Route path="/agendar/:doctorId" element={<ScheduleAppointment />} />
                 </Route>
+
+                <Route path="/register" element={<RegisterScreen />} />
 
                 {/* Redirecionamento padrão para qualquer rota não encontrada */}
                 <Route path="*" element={<Navigate to="/login" replace />} />

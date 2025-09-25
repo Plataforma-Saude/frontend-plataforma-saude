@@ -40,7 +40,7 @@ export default function ScheduleAppointment() {
     }
 
     return (
-        <div className="max-w-4xl mx-auto flex flex-col gap-8">
+        <div className="max-w-4xl mx-auto flex flex-col gap-8 mt-6">
             <div className="bg-white p-6 rounded-lg shadow-md">
                 <h1 className="text-2xl font-bold text-primary-dark">Agendar Consulta</h1>
                 <p className="text-lg text-gray-600">com <span className="font-bold">{doctor.name}</span> - {doctor.specialty}</p>
