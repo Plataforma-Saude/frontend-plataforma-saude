@@ -1,44 +1,44 @@
-import DoctorCard from "./components/DoctorCard/DoctorCard";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import LoginScreen from "./pages/LoginScreen";
+import SelectDoctor from "./pages/SelectDoctor";
+import Layout from "./components/Layout/Layout";
+import ScheduleAppointment from './pages/ScheduleAppointment';
+import RegisterScreen from './pages/RegisterScreen';
+import DashboardScreen from './pages/admin/DashboardScreen';
+// import ManageUsersScreen from './pages/admin/ManageUsersScreen';
+import AdminRoute from './components/Auth/AdminRoute';
+import { AuthProvider } from './context/AuthContext';
 
 export default function App() {
+    return (
+        <AuthProvider>
+            <Router>
+                <Routes>
+                    {/* Rotas que não usam o Layout ficam aqui fora */}
+                    <Route path="/login" element={<LoginScreen />} />
+                    <Route path="/register" element={<RegisterScreen />} />
 
-  const doctors = [
-    {
-      id: 1,
-      name: "Dr. João Silva",
-      specialty: "Cardiologia",
-      crm: "123456-SP",
-      photo:
-        "https://img.freepik.com/fotos-gratis/medico-alegre-em-um-retrato-de-vestido-branco_53876-105121.jpg?semt=ais_hybrid&w=740&q=80",
-    },
-    {
-      id: 2,
-      name: "Dra. Maria Oliveira",
-      specialty: "Dermatologia",
-      crm: "654321-RJ",
-      photo:
-        "https://img.freepik.com/fotos-gratis/medica-no-hospital-com-estetoscopio_23-2148827774.jpg?semt=ais_hybrid&w=740&q=80",
-    },
-    {
-      id: 3,
-      name: "Dr. Pedro Souza",
-      specialty: "Ortopedia",
-      crm: "987654-MG",
-      photo:
-        "https://img.freepik.com/fotos-premium/jovem-medico-hospital-medico-medicina-cuidados-de-saude-clinica-escritorio-retrato-oculos-homem-especialista-em-estetoscopio_772720-5257.jpg",
-    },
-    {
-      id: 4,
-      name: "Dra. Ana Costa",
-      specialty: "Pediatria",
-      crm: "456789-RS",
-    },
-  ];
+                    {/* Rota "pai" que renderiza o Layout. Todas as rotas filhas
+                    serão renderizadas dentro do <Outlet /> do Layout */}
+                    <Route element={<Layout />}>
+                        <Route path="/buscar-medico" element={<SelectDoctor />} />
+                        {/* Exemplo: Se tivesse outra página, ela viria aqui */}
+                        {/* <Route path="/meu-perfil" element={<ProfileScreen />} /> */}
+                        <Route path="/agendar/:doctorId" element={<ScheduleAppointment />} />
+                    </Route>
 
-  return (
-    <>
-      <LoginScreen />
-    </>
-  );
+                    <Route element={<AdminRoute />}>
+                        {/* Aqui você pode usar o mesmo Layout ou um Layout específico para o Admin */}
+                        <Route element={<Layout />}>
+                            <Route path="/admin/dashboard" element={<DashboardScreen />} />
+                            {/* <Route path="/admin/manage-users" element={<ManageUsersScreen />} /> */}
+                        </Route>
+                    </Route>
+
+                    {/* Redirecionamento padrão para qualquer rota não encontrada */}
+                    <Route path="*" element={<Navigate to="/login" replace />} />
+                </Routes>
+            </Router>
+        </AuthProvider>
+    );
 }
