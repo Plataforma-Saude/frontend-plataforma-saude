@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
+import { useNavigate } from "react-router-dom";
 import EmailInput from "../components/EmailInput/EmailInput";
 import PasswordInput from "../components/PasswordInput/PasswordInput";
 import ImageComponent from "../components/ImageComponent/ImageComponent";
@@ -13,7 +14,12 @@ export default function LoginScreen() {
         resolver: yupResolver(loginValidationSchema)
     })
 
-    const onLogin = (data) => console.log(data);
+    const navigate = useNavigate();
+
+    const onLogin = (data) => {
+        console.log(data)
+        navigate('/buscar-medico');
+    };
 
     return (
         <div className="grid grid-cols-4 h-screen">
