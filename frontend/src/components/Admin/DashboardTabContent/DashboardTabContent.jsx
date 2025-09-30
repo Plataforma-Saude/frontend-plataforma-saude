@@ -9,28 +9,28 @@ export default function DashboardTabContent({ stats, appointments }) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <StatCard
                     title="Total de Consultas"
-                    value={stats.totalAppointments}
+                    value={stats?.totalAppointments ?? 0}
                     description="Este mês"
                     icon={<FaCalendar className="h-4 w-4 text-gray-400" />}
                 />
 
                 <StatCard
                     title="Consultas Hoje"
-                    value={stats.todayAppointments}
+                    value={stats?.todayAppointments ?? 0}
                     description="Agendadas para hoje"
                     icon={<FaClock className="h-4 w-4 text-gray-400" />}
                 />
 
                 <StatCard
                     title="Médicos Ativos"
-                    value={stats.activeDoctors}
+                    value={stats?.activeDoctors ?? 0}
                     description="Profissionais cadastrados"
                     icon={<FaUsers className="h-4 w-4 text-gray-400" />}
                 />
 
                 <StatCard
                     title="Pendentes"
-                    value={stats.pendingAppointments}
+                    value={stats?.pendingAppointments ?? 0}
                     description="Aguardando confirmação"
                     icon={<FaChartBar className="h-4 w-4 text-gray-400" />}
                 />
