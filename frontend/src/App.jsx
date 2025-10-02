@@ -19,9 +19,9 @@ export default function App() {
                     {/* Rotas que não usam o Layout ficam aqui fora */}
                     <Route path="/login" element={<LoginScreen />} />
                     <Route path="/register" element={<RegisterScreen />} />
-                  <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
+                    <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
                     <Route path="/reset-password" element={<ResetPasswordScreen />} />
-                    
+
                     {/* Rota "pai" que renderiza o Layout. Todas as rotas filhas
                     serão renderizadas dentro do <Outlet /> do Layout */}
                     <Route element={<Layout />}>
