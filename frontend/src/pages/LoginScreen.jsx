@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import EmailInput from "../components/EmailInput/EmailInput";
 import PasswordInput from "../components/PasswordInput/PasswordInput";
 import ImageComponent from "../components/ImageComponent/ImageComponent";
-import Logo from "../assets/icons/logo.svg"
-import HomeDoctors from "../assets/img/home-doctors.svg"
+import Logo from "../assets/icons/logo.svg";
+import HomeDoctors from "../assets/img/home-doctors.svg";
 import { loginValidationSchema } from "../utils/loginValidation";
 import { Link } from "react-router-dom";
  
@@ -21,14 +21,13 @@ export default function LoginScreen() {
         navigate('/buscar-medico');
     };
 
-    return (
-        <div className="grid grid-cols-4 h-screen">
-            <div className="bg-primary col-span-1 h-full">
-                <div className="grid grid-cols-1 h-full">
-
-                    <div className="flex justify-center items-center">
-                        <ImageComponent src={Logo} alt={"Logo"} className={"w-30"} />
-                    </div>
+  return (
+    <div className="grid grid-cols-4 h-screen">
+      <div className="bg-primary col-span-1 h-full">
+        <div className="grid grid-cols-1 h-full">
+          <div className="flex justify-center items-center">
+            <ImageComponent src={Logo} alt={"Logo"} className={"w-30"} />
+          </div>
 
                     <div className="flex justify-center items-center">
                         <h2 className="text-white text-5xl font-semibold">Agende. Gerencie. Cuide.</h2>
