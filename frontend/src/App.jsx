@@ -3,13 +3,16 @@ import LoginScreen from "./pages/LoginScreen";
 import SelectDoctor from "./pages/SelectDoctor";
 import Layout from "./components/Layout/Layout";
 import ScheduleAppointment from './pages/ScheduleAppointment';
-import RegisterScreen from './pages/RegisterScreen';
+import RegisterScreenDoctor from './pages/RegisterScreenDoctor';
 import DashboardScreen from './pages/admin/DashboardScreen';
+import MyAppointmentsPage from "./pages/patient/MyAppointmentsPage";
+import ChooseRegister from "./pages/ChooseRegister";
 // import ManageUsersScreen from './pages/admin/ManageUsersScreen';
 import AdminRoute from './components/Auth/AdminRoute';
 import { AuthProvider } from './context/AuthContext';
 import ForgotPasswordScreen from "./pages/ForgotPasswordScreen";
 import ResetPasswordScreen from "./pages/ResetPasswordScreen";
+import RegisterScreenPatient from "./pages/RegisterScreenPatient";
 
 export default function App() {
     return (
@@ -18,9 +21,12 @@ export default function App() {
                 <Routes>
                     {/* Rotas que não usam o Layout ficam aqui fora */}
                     <Route path="/login" element={<LoginScreen />} />
-                    <Route path="/register" element={<RegisterScreen />} />
                     <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
                     <Route path="/reset-password" element={<ResetPasswordScreen />} />
+
+                    <Route path="/register-option" element={<ChooseRegister />} />
+                    <Route path="/register-doctor" element={<RegisterScreenDoctor />} />
+                    <Route path="/register-patient" element={<RegisterScreenPatient />} />
 
                     {/* Rota "pai" que renderiza o Layout. Todas as rotas filhas
                     serão renderizadas dentro do <Outlet /> do Layout */}
@@ -28,6 +34,7 @@ export default function App() {
                         <Route path="/buscar-medico" element={<SelectDoctor />} />
                         {/* Exemplo: Se tivesse outra página, ela viria aqui */}
                         {/* <Route path="/meu-perfil" element={<ProfileScreen />} /> */}
+                        <Route path="/minhas-consultas" element={<MyAppointmentsPage />} />
                         <Route path="/agendar/:doctorId" element={<ScheduleAppointment />} />
                     </Route>
 

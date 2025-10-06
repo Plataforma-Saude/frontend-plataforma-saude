@@ -90,10 +90,11 @@ export default function MyAppointmentsPage() {
   }
 
   return (
-    <div className="p-6 max-w-5xl mx-auto">
+
+    <div className="p-6 rounded-xl mb-6">
       <header className="mb-6">
-        <h1 className="text-2xl font-semibold">Minhas Consultas</h1>
-        <p className="text-sm text-slate-500 mt-1">Veja suas próximas consultas e o histórico.</p>
+        <h1 className="text-xl font-bold text-primary-dark mb-5">Minhas Consultas</h1>
+        <p className="font-semibold text-sm text-gray-700">Veja suas próximas consultas e o histórico.</p>
       </header>
 
       {/* Tabs */}

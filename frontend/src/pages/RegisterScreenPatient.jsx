@@ -7,14 +7,14 @@ import Google from "../assets/icons/google-icon.svg";
 import Facebook from "../assets/icons/facebook-icon.svg";
 import Instagram from "../assets/icons/instagram-icon.svg";
 import Apple from "../assets/icons/apple-icon.svg";
-import RegisterInput from "../components/RegisterInput/RegisterInput";
+import RegisterInputPatient from "../components/RegisterInput/RegisterInputPatient";
 import ImageComponent from "../components/ImageComponent/ImageComponent";
 import { Link } from "react-router-dom";
 import fetchAddress from "../components/FetchAddress/fetchAddress";
 import PasswordInput from "../components/PasswordInput/PasswordInput";
 
 
-function RegisterScreen() {
+function RegisterScreenPatient() {
     const { register, handleSubmit, formState: { errors }, setValue, watch} = useForm({
             resolver: yupResolver(registerValidationSchema)
         })
@@ -43,7 +43,7 @@ function RegisterScreen() {
 
     return (
         <div className="grid grid-cols-4 h-screen w-full">
-          <div className="w-[600px] bg-primary col-span-1 flex flex-col items-center justify-start text-white pt-[250px] space-y-6">
+          <div className="w-[600px] bg-primary col-span-1 flex flex-col items-center justify-start text-white pt-[300px] space-y-6">
                 <h1 className="text-5xl font-bold">Bem vindo!</h1>
                 <p className="text-2xl font-bold">Já possui uma conta?</p>
                 <Link 
@@ -68,9 +68,9 @@ function RegisterScreen() {
 
           <form 
             onSubmit={handleSubmit(onSubmit)}
-            className="col-span-3 w-full h-full flex items-center justify-center p-10 pt-[30px]"
+            className="col-span-3 w-full h-full flex items-center justify-center p-10"
           >
-            <div className="w-full max-w-2xl pt-[80px]">
+            <div className="w-full max-w-2xl">
                     <div className="flex justify-center mb-6">
                       <ImageComponent src={Logo} alt="Logo" className="w-32" />
                     </div>
@@ -79,23 +79,15 @@ function RegisterScreen() {
                       Crie sua conta
                     </h2>
 
-                      <RegisterInput
-                        placeholder="Nome"
+                      <RegisterInputPatient
+                        placeholder="Nome Completo"
                         type="text"
                         name="name"
                         register={register}
                         errors={errors}
                     />
 
-                    <RegisterInput
-                        placeholder="Sobrenome"
-                        type="text"
-                        name="lastname"
-                        register={register}
-                        errors={errors}
-                    />
-
-                    <RegisterInput
+                    <RegisterInputPatient
                         placeholder="CPF"
                         type="text"
                         name="cpf"
@@ -105,76 +97,7 @@ function RegisterScreen() {
                         mask="cpf"
                     />
 
-                    <RegisterInput
-                        placeholder="Data de Nascimento"
-                        type="date"
-                        name="birth"
-                        register={register}
-                        errors={errors}
-                    />
-
-                    <RegisterInput
-                        placeholder="Profissão"
-                        type="text"
-                        name="occupation"
-                        register={register}
-                        errors={errors}
-                    />
-
-                    <RegisterInput
-                        placeholder="Número de Telefone"
-                        type="text"
-                        name="phone"
-                        register={register}
-                        errors={errors}
-                        setValue={setValue}
-                        mask="phone"
-                    />
-
-                    <RegisterInput
-                        placeholder="CEP"
-                        type="text"
-                        name="zipcode"
-                        register={register}
-                        errors={errors}
-                        setValue={setValue}
-                        mask="zipcode"
-                    />
-
-
-                    <RegisterInput
-                        placeholder="Estado"
-                        type="text"
-                        name="state"
-                        register={register}
-                        errors={errors}
-                    />
-
-                    <RegisterInput
-                        placeholder="Cidade"
-                        type="text"
-                        name="city"
-                        register={register}
-                        errors={errors}
-                    />
-
-                    <RegisterInput
-                        placeholder="Rua"
-                        type="text"
-                        name="street"
-                        register={register}
-                        errors={errors}
-                    />
-
-                    <RegisterInput
-                        placeholder="Número"
-                        type="text"
-                        name="housenumber"
-                        register={register}
-                        errors={errors}
-                    />
-
-                    <RegisterInput
+                    <RegisterInputPatient
                         placeholder="Email"
                         type="email"
                         name="email"
@@ -182,7 +105,7 @@ function RegisterScreen() {
                         errors={errors}
                     />
 
-                    <RegisterInput
+                    <RegisterInputPatient
                         placeholder="Senha"
                         name="password"
                         register={register}
@@ -190,7 +113,7 @@ function RegisterScreen() {
                         isPassword={true}
                     />
 
-                    <RegisterInput
+                    <RegisterInputPatient
                         placeholder="Confirmar Senha"
                         name="confPassword"
                         register={register}
@@ -223,4 +146,4 @@ function RegisterScreen() {
   );
 }
 
-export default RegisterScreen;
+export default RegisterScreenPatient;
