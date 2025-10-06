@@ -7,14 +7,14 @@ import Google from "../assets/icons/google-icon.svg";
 import Facebook from "../assets/icons/facebook-icon.svg";
 import Instagram from "../assets/icons/instagram-icon.svg";
 import Apple from "../assets/icons/apple-icon.svg";
-import RegisterInputPatient from "../components/RegisterInput/RegisterInputPatient";
+import RegisterInput from "../components/RegisterInput/RegisterInput";
 import ImageComponent from "../components/ImageComponent/ImageComponent";
 import { Link } from "react-router-dom";
 import fetchAddress from "../components/FetchAddress/fetchAddress";
 import PasswordInput from "../components/PasswordInput/PasswordInput";
 
 
-function RegisterScreenPatient() {
+function RegisterScreen() {
     const { register, handleSubmit, formState: { errors }, setValue, watch} = useForm({
             resolver: yupResolver(registerValidationSchema)
         })
@@ -79,7 +79,7 @@ function RegisterScreenPatient() {
                       Crie sua conta
                     </h2>
 
-                      <RegisterInputPatient
+                      <RegisterInput
                         placeholder="Nome Completo"
                         type="text"
                         name="name"
@@ -87,7 +87,7 @@ function RegisterScreenPatient() {
                         errors={errors}
                     />
 
-                    <RegisterInputPatient
+                    <RegisterInput
                         placeholder="CPF"
                         type="text"
                         name="cpf"
@@ -97,7 +97,7 @@ function RegisterScreenPatient() {
                         mask="cpf"
                     />
 
-                    <RegisterInputPatient
+                    <RegisterInput
                         placeholder="Email"
                         type="email"
                         name="email"
@@ -105,7 +105,7 @@ function RegisterScreenPatient() {
                         errors={errors}
                     />
 
-                    <RegisterInputPatient
+                    <RegisterInput
                         placeholder="Senha"
                         name="password"
                         register={register}
@@ -113,7 +113,7 @@ function RegisterScreenPatient() {
                         isPassword={true}
                     />
 
-                    <RegisterInputPatient
+                    <RegisterInput
                         placeholder="Confirmar Senha"
                         name="confPassword"
                         register={register}
@@ -146,4 +146,4 @@ function RegisterScreenPatient() {
   );
 }
 
-export default RegisterScreenPatient;
+export default RegisterScreen;

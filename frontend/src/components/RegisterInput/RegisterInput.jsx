@@ -14,7 +14,7 @@ const ClosedEye = () => (
   </svg>
 );
 
-export default function RegisterInputPatient({
+export default function RegisterInput({
   label,
   type,
   name,

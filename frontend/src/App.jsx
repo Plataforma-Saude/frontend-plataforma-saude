@@ -3,16 +3,14 @@ import LoginScreen from "./pages/LoginScreen";
 import SelectDoctor from "./pages/SelectDoctor";
 import Layout from "./components/Layout/Layout";
 import ScheduleAppointment from './pages/ScheduleAppointment';
-import RegisterScreenDoctor from './pages/RegisterScreenDoctor';
 import DashboardScreen from './pages/admin/DashboardScreen';
 import MyAppointmentsPage from "./pages/patient/MyAppointmentsPage";
-import ChooseRegister from "./pages/ChooseRegister";
 // import ManageUsersScreen from './pages/admin/ManageUsersScreen';
 import AdminRoute from './components/Auth/AdminRoute';
 import { AuthProvider } from './context/AuthContext';
 import ForgotPasswordScreen from "./pages/ForgotPasswordScreen";
 import ResetPasswordScreen from "./pages/ResetPasswordScreen";
-import RegisterScreenPatient from "./pages/RegisterScreenPatient";
+import RegisterScreen from "./pages/RegisterScreen";
 
 export default function App() {
     return (
@@ -24,9 +22,7 @@ export default function App() {
                     <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
                     <Route path="/reset-password" element={<ResetPasswordScreen />} />
 
-                    <Route path="/register-option" element={<ChooseRegister />} />
-                    <Route path="/register-doctor" element={<RegisterScreenDoctor />} />
-                    <Route path="/register-patient" element={<RegisterScreenPatient />} />
+                    <Route path="/register" element={<RegisterScreen />} />
 
                     {/* Rota "pai" que renderiza o Layout. Todas as rotas filhas
                     serão renderizadas dentro do <Outlet /> do Layout */}
