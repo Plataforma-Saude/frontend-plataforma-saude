@@ -8,6 +8,8 @@ import DashboardScreen from './pages/admin/DashboardScreen';
 // import ManageUsersScreen from './pages/admin/ManageUsersScreen';
 import AdminRoute from './components/Auth/AdminRoute';
 import { AuthProvider } from './context/AuthContext';
+import ForgotPasswordScreen from "./pages/ForgotPasswordScreen";
+import ResetPasswordScreen from "./pages/ResetPasswordScreen";
 
 export default function App() {
     return (
@@ -17,6 +19,8 @@ export default function App() {
                     {/* Rotas que não usam o Layout ficam aqui fora */}
                     <Route path="/login" element={<LoginScreen />} />
                     <Route path="/register" element={<RegisterScreen />} />
+                    <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
+                    <Route path="/reset-password" element={<ResetPasswordScreen />} />
 
                     {/* Rota "pai" que renderiza o Layout. Todas as rotas filhas
                     serão renderizadas dentro do <Outlet /> do Layout */}
