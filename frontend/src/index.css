@@ -2,8 +2,6 @@
 
 @theme {
     --color-primary: #3B7868;
-<<<<<<< HEAD
-=======
     --color-primary-dark: #2C5A4D;
     --color-accent: #EBF2F0;
     --color-light-gray: #F5F5F5;
@@ -11,5 +9,4 @@
 
 body {
     @apply bg-light-gray;
->>>>>>> dacca6074fbed26e4a7aa4634836eadd5e3286fe
 }
