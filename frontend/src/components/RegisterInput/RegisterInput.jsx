@@ -47,16 +47,16 @@ export default function RegisterInput({
       else if (val.length > 3) val = val.replace(/(\d{3})(\d{1,3})/, "$1.$2");
     }
 
-    if (mask === "phone") {
-      val = val.substring(0, 11);
-      if (val.length > 6) val = val.replace(/(\d{2})(\d{5})(\d{1,4})/, "($1) $2-$3");
-      else if (val.length > 2) val = val.replace(/(\d{2})(\d{1,5})/, "($1) $2");
-    }
+//  if (mask === "phone") {
+//    val = val.substring(0, 11);
+//    if (val.length > 6) val = val.replace(/(\d{2})(\d{5})(\d{1,4})/, "($1) $2-$3");
+//    else if (val.length > 2) val = val.replace(/(\d{2})(\d{1,5})/, "($1) $2");
+//  }
 
-    if (mask === "zipcode") {
-      val = val.substring(0, 8);
-      if (val.length > 5) val = val.replace(/(\d{5})(\d{1,3})/, "$1-$2");
-    }
+//  if (mask === "zipcode") {
+//    val = val.substring(0, 8);
+//    if (val.length > 5) val = val.replace(/(\d{5})(\d{1,3})/, "$1-$2");
+//  }
 
     setValue(name, val);
   };

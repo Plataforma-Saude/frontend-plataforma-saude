@@ -1,4 +1,5 @@
 import { FaStethoscope, FaUserMd, FaIdCard, FaSearch } from 'react-icons/fa';
+import MyAppointmentsPage from '../../pages/patient/MyAppointmentsPage';
 
 export default function DoctorsFilter() {
     const inputContainerStyle = "relative flex items-center";
@@ -8,7 +9,9 @@ export default function DoctorsFilter() {
     const iconStyle = "absolute left-3 top-1/2 -translate-y-1/2 text-gray-400";
 
     return(
-        <section className="bg-accent p-6 rounded-xl">
+        <section>
+            <MyAppointmentsPage/>
+        <div className="bg-accent p-6 rounded-xl">
             <h2 className="text-xl font-bold text-primary-dark mb-5">Busque por um especialista</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
@@ -49,6 +52,7 @@ export default function DoctorsFilter() {
                     Buscar
                 </button>
             </div>
+        </div>
         </section>
     )
 }
