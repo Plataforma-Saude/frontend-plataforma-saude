@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import AppointmentCard from "../../components/Patient/AppointmentCard";
+import AppointmentCard from "../../components/AppointmentCard/AppointmentCard";
 
 export default function MyAppointmentsPage() {
   const [activeTab, setActiveTab] = useState("upcoming");
@@ -11,34 +11,34 @@ export default function MyAppointmentsPage() {
   useEffect(() => {
     setAppointments([
       {
-      id: 1,
-      date: "2025-10-05",
-      time: "10:00",
-      name: "Dr. João Silva",
-      specialty: "Cardiologia",
-      crm: "123456-SP",
-      status: "agendada",
-    },
-    {
-      id: 2,
-      date: "2025-09-10",
-      time: "14:00",
-      name: "Dra. Maria Oliveira",
-      specialty: "Dermatologia",
-      crm: "654321-RJ",
-      status: "realizada",
-    },
-    {
-      id: 3,
-      date: "2025-10-10",
-      time: "16:00",
-      name: "Dr. Pedro Souza",
-      specialty: "Ortopedia",
-      crm: "987654-MG",
-      status: "cancelada",
-    },
-  ]);
-}, []);
+        id: 1,
+        date: "2025-10-05",
+        time: "10:00",
+        name: "Dr. João Silva",
+        specialty: "Cardiologia",
+        crm: "123456-SP",
+        status: "agendada",
+      },
+      {
+        id: 2,
+        date: "2025-09-10",
+        time: "14:00",
+        name: "Dra. Maria Oliveira",
+        specialty: "Dermatologia",
+        crm: "654321-RJ",
+        status: "realizada",
+      },
+      {
+        id: 3,
+        date: "2025-10-10",
+        time: "16:00",
+        name: "Dr. Pedro Souza",
+        specialty: "Ortopedia",
+        crm: "987654-MG",
+        status: "cancelada",
+      },
+    ]);
+  }, []);
 
   const today = useMemo(() => {
     const d = new Date();
@@ -48,14 +48,14 @@ export default function MyAppointmentsPage() {
 
   // formato da data em padrão BR
   function formatDateBR(isoDate) {
-  const d = new Date(isoDate + "T00:00:00");
-  const day = String(d.getDate()).padStart(2, "0");
-  const month = String(d.getMonth() + 1).padStart(2, "0");
-  const year = d.getFullYear();
-  return `${day}/${month}/${year}`;
-}
+    const d = new Date(isoDate + "T00:00:00");
+    const day = String(d.getDate()).padStart(2, "0");
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const year = d.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
 
-//filtros de pesquisa
+  //filtros de pesquisa
   const filtered = useMemo(() => {
     const list = appointments.filter((a) => {
       const apptDate = new Date(a.date + "T00:00:00");

@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
-import EmailInput from "../components/EmailInput/EmailInput";
-import { forgotPasswordEmailSchema } from "../utils/forgotPasswordValidation";
+import EmailInput from "../../components/EmailInput/EmailInput";
+import { forgotPasswordEmailSchema } from "../../utils/forgotPasswordValidation";
 
 export default function ForgotPasswordScreen() {
   const navigate = useNavigate();

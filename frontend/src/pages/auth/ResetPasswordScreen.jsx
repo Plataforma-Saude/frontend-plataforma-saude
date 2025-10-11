@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
-import PasswordInput from "../components/PasswordInput/PasswordInput";
-import { resetPasswordSchema } from "../utils/resetPasswordValidation";
+import PasswordInput from "../../components/PasswordInput/PasswordInput";
+import { resetPasswordSchema } from "../../utils/resetPasswordValidation";
 
 export default function ResetPasswordScreen() {
   const navigate = useNavigate();

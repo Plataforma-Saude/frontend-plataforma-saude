@@ -1,17 +1,17 @@
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { registerValidationSchema } from "../utils/registerValidation";
-import Logo from "../assets/icons/logo.svg";
-import Google from "../assets/icons/google-icon.svg";
-import Facebook from "../assets/icons/facebook-icon.svg";
-import Instagram from "../assets/icons/instagram-icon.svg";
-import Apple from "../assets/icons/apple-icon.svg";
-import RegisterInput from "../components/RegisterInput/RegisterInput";
-import ImageComponent from "../components/ImageComponent/ImageComponent";
+import { registerValidationSchema } from "../../utils/registerValidation";
+import Logo from "../../assets/icons/logo.svg";
+import Google from "../../assets/icons/google-icon.svg";
+import Facebook from "../../assets/icons/facebook-icon.svg";
+import Instagram from "../../assets/icons/instagram-icon.svg";
+import Apple from "../../assets/icons/apple-icon.svg";
+import RegisterInput from "../../components/RegisterInput/RegisterInput";
+import ImageComponent from "../../components/ImageComponent/ImageComponent";
 import { Link } from "react-router-dom";
-import fetchAddress from "../components/FetchAddress/fetchAddress";
-import PasswordInput from "../components/PasswordInput/PasswordInput";
+import fetchAddress from "../../components/FetchAddress/fetchAddress";
+import PasswordInput from "../../components/PasswordInput/PasswordInput";
 
 
 function RegisterScreen() {

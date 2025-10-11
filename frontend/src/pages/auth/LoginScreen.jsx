@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useNavigate } from "react-router-dom";
-import EmailInput from "../components/EmailInput/EmailInput";
-import PasswordInput from "../components/PasswordInput/PasswordInput";
-import ImageComponent from "../components/ImageComponent/ImageComponent";
-import Logo from "../assets/icons/logo.svg";
-import HomeDoctors from "../assets/img/home-doctors.svg";
-import { loginValidationSchema } from "../utils/loginValidation";
+import EmailInput from "../../components/EmailInput/EmailInput";
+import PasswordInput from "../../components/PasswordInput/PasswordInput";
+import ImageComponent from "../../components/ImageComponent/ImageComponent";
+import Logo from "../../assets/icons/logo.svg";
+import HomeDoctors from "../../assets/img/home-doctors.svg";
+import { loginValidationSchema } from "../../utils/loginValidation";
 import { Link } from "react-router-dom";
  
 export default function LoginScreen() {
