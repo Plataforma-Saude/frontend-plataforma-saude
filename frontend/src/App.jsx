@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import LoginScreen from "./pages/LoginScreen";
-import SelectDoctor from "./pages/SelectDoctor";
+import LoginScreen from "./pages/auth/LoginScreen";
+import SelectDoctor from "./pages/patient/SelectDoctor";
 import Layout from "./components/Layout/Layout";
-import ScheduleAppointment from './pages/ScheduleAppointment';
+import ScheduleAppointment from './pages/patient/ScheduleAppointment';
 import DashboardScreen from './pages/admin/DashboardScreen';
 import MyAppointmentsPage from "./pages/patient/MyAppointmentsPage";
 // import ManageUsersScreen from './pages/admin/ManageUsersScreen';
 import AdminRoute from './components/Auth/AdminRoute';
 import { AuthProvider } from './context/AuthContext';
-import ForgotPasswordScreen from "./pages/ForgotPasswordScreen";
-import ResetPasswordScreen from "./pages/ResetPasswordScreen";
-import RegisterScreen from "./pages/RegisterScreen";
+import ForgotPasswordScreen from "./pages/auth/ForgotPasswordScreen";
+import ResetPasswordScreen from "./pages/auth/ResetPasswordScreen";
+import RegisterScreen from "./pages/auth/RegisterScreen";
 
 export default function App() {
     return (

@@ -181,7 +181,7 @@ export default function MedicosTabContent() {
         <h3 className="text-xl font-semibold">Gerenciar Médicos</h3>
         <button
           onClick={() => setShowModal(true)}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary-dark transition-colors cursor-pointer"
         >
           Adicionar Novo Médico
         </button>
