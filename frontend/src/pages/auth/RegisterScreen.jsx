@@ -87,7 +87,7 @@ function RegisterScreen() {
                 <h1 className="text-5xl font-bold">Bem vindo!</h1>
                 <p className="text-2xl font-bold">Já possui uma conta?</p>
                 <Link
-                    to="/"
+                    to="/login"
                     className="w-[200px] h-[50px] bg-[#76BFAC] text-[#FFFFFF] font-semibold text-center text-xl px-10 py-2 rounded-lg hover:bg-[#264D40] hover:text-white shadow-md">
                     Entrar
                 </Link>
