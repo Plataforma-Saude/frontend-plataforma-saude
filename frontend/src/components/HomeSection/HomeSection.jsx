@@ -3,6 +3,7 @@ import Login from "../Buttons/Login";
 import Navbar from "../Navbar/Navbar";
 import SliderSection from "../SliderSection/SliderSection";
 import ContactSection from "../ContactSection/ContactSection";
+import { Link } from "react-router-dom";
 
 export default function HomeSection() {
     return (
