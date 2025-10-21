@@ -11,6 +11,7 @@ import { AuthProvider } from './context/AuthContext';
 import ForgotPasswordScreen from "./pages/auth/ForgotPasswordScreen";
 import ResetPasswordScreen from "./pages/auth/ResetPasswordScreen";
 import RegisterScreen from "./pages/auth/RegisterScreen";
+import Home from "./pages/Home";
 
 export default function App() {
     return (
@@ -18,6 +19,7 @@ export default function App() {
             <Router>
                 <Routes>
                     {/* Rotas que não usam o Layout ficam aqui fora */}
+                    <Route path="/home" element={<Home />} />
                     <Route path="/login" element={<LoginScreen />} />
                     <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
                     <Route path="/reset-password" element={<ResetPasswordScreen />} />
@@ -43,7 +45,7 @@ export default function App() {
                     </Route>
 
                     {/* Redirecionamento padrão para qualquer rota não encontrada */}
-                    <Route path="*" element={<Navigate to="/login" replace />} />
+                    <Route path="*" element={<Navigate to="/home" replace />} />
                 </Routes>
             </Router>
         </AuthProvider>
