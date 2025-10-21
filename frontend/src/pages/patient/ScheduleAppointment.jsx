@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import DatePicker from '../components/DatePicker/DatePicker';
-import TimeSlotPicker from '../components/TimeSlotPicker/TimeSlotPicker';
-import Confirmation from '../components/Confirmation/Confirmation';
+import DatePicker from '../../components/DatePicker/DatePicker';
+import TimeSlotPicker from '../../components/TimeSlotPicker/TimeSlotPicker';
+import Confirmation from '../../components/Confirmation/Confirmation';
 
-import { doctors as mockDoctors } from '../utils/mocks/doctors'; 
-import { getAvailableTimes } from '../utils/mocks/api'; 
+import { doctors as mockDoctors } from '../../utils/mocks/doctors'; 
+import { getAvailableTimes } from '../../utils/mocks/api'; 
 
 export default function ScheduleAppointment() {
     const { doctorId } = useParams(); // Pega o ID do médico da URL

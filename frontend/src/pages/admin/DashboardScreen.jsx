@@ -85,7 +85,7 @@ export default function DashboardScreen() {
                     <p className="text-muted-foreground">Gerencie sua clínica e profissionais</p>
                 </div>
                 <button
-                    className="flex items-center gap-2 border"
+                    className="flex items-center gap-2 p-2 px-4 rounded-lg bg-primary text-white hover:bg-primary-dark transition-colors cursor-pointer"
                 >
                     <FaHeadphones className="h-4 w-4" />
                     <span>Suporte</span>

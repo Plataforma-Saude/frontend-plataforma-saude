@@ -13,6 +13,9 @@
     --color-primary: #3B7868;
     --font-inter: "Inter", sans-serif;
     --bg-pattern: url('/images/background-home.png');
+    --color-primary-dark: #2C5A4D;
+    --color-accent: #EBF2F0;
+    --color-light-gray: #F5F5F5;
 }
 
 .bg-pattern {
@@ -28,4 +31,9 @@
 /* cor da bolinha ativa */
 .swiper-pagination-bullet-active {
   background-color: #3b7868;
+}
+    
+
+body {
+    @apply bg-light-gray;
 }
