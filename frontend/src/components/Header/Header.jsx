@@ -11,6 +11,15 @@ export default function Header() {
                 </figure>
                 <h1 className="hidden sm:block text-xl font-bold text-primary">NOME DA CLÍNICA</h1>
             </div>
+
+            {/* Menu */}
+            <nav className="justify-start">
+                <ul className="flex gap-6 text-primary justify-start">
+                    <li><a href="/" className="hover:underline">Início</a></li>
+                    <li><a href="/buscar-medico" className="hover:underline">Agendar</a></li>
+                    <li><a href="/minhas-consultas" className="hover:underline">Minhas consultas</a></li>
+                </ul>
+            </nav>
             
             {/* Menu do Usuário */}
             <div className="flex items-center gap-4 p-2 rounded-lg cursor-pointer transition-colors hover:bg-accent">

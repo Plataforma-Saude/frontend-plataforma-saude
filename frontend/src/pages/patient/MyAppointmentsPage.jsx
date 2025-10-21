@@ -12,7 +12,7 @@ export default function MyAppointmentsPage() {
     setAppointments([
       {
       id: 1,
-      date: "2025-10-05",
+      date: "2025-11-20",
       time: "10:00",
       name: "Dr. João Silva",
       specialty: "Cardiologia",

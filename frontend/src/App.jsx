@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import LoginScreen from "./pages/LoginScreen";
-import SelectDoctor from "./pages/SelectDoctor";
 import Layout from "./components/Layout/Layout";
 import ScheduleAppointment from './pages/ScheduleAppointment';
 import DashboardScreen from './pages/admin/DashboardScreen';
-import MyAppointmentsPage from "./pages/patient/MyAppointmentsPage";
 // import ManageUsersScreen from './pages/admin/ManageUsersScreen';
 import AdminRoute from './components/Auth/AdminRoute';
 import { AuthProvider } from './context/AuthContext';
 import ForgotPasswordScreen from "./pages/ForgotPasswordScreen";
 import ResetPasswordScreen from "./pages/ResetPasswordScreen";
 import RegisterScreen from "./pages/RegisterScreen";
+import SelectDoctor from "./pages/SelectDoctor";
+import MyAppointmentsPage from "./pages/patient/MyAppointmentsPage";
 
 export default function App() {
     return (
@@ -28,6 +28,7 @@ export default function App() {
                     serão renderizadas dentro do <Outlet /> do Layout */}
                     <Route element={<Layout />}>
                         <Route path="/buscar-medico" element={<SelectDoctor />} />
+
                         {/* Exemplo: Se tivesse outra página, ela viria aqui */}
                         {/* <Route path="/meu-perfil" element={<ProfileScreen />} /> */}
                         <Route path="/minhas-consultas" element={<MyAppointmentsPage />} />
